@@ -55,6 +55,8 @@ def to_usd(my_price):
 
 # Checkpoint 1: Capturing User Inputs & # Checkpoint 2: Look-up Products 
 
+total_cost = 0
+
 while True:
     chosen_id = input("Please input a product identifier: ") 
     if chosen_id == "DONE": 
@@ -62,7 +64,9 @@ while True:
     else:
         matching_products = [p for p in products if str(p["id"]) == str(chosen_id)]
         matching_product = matching_products[0]
+        total_cost = total_cost + matching_product["price"]
         print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
 
-
 # Checkpoint 3: Printing the receipt 
+
+print("TOTAL COST: " + str(total_cost))
