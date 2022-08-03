@@ -64,7 +64,7 @@ subtotal_cost = 0
 chosen_ids = []
 
 while True:
-    chosen_id = input("Please input a product identifier: ") 
+    chosen_id = input("Please input a product identifier, or 'DONE' if there are no more items: ") 
     if chosen_id.upper() == "DONE": 
         break
     else:
