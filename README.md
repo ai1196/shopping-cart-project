@@ -1,5 +1,3 @@
-# shopping-cart-project
-
 # Shopping Cart Project
 
 This is a python application that will help store owners to enhance the checkout process. 
