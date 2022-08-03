@@ -53,15 +53,11 @@ print(products)
 # A friendly message thanking the customer and/or encouraging the customer to shop again
 
 
-# Checkpoint 1: Capturing User Inputs
+# Checkpoint 1: Capturing User Inputs & # Checkpoint 2: Look-up Products 
 
 chosen_id = input("Please input a product identifier: ") 
-print(chosen_id)
-print(type(chosen_id))
-
-
-
-# Checkpoint 2: Look-up Products 
-
+matching_products = [p for p in products if str(p["id"]) == str(chosen_id)]
+matching_product = matching_products[0]
+print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
 
 # Checkpoint 3: Printing the receipt 
