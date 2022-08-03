@@ -43,8 +43,8 @@ def to_usd(my_price):
 
 # ***Reviewed guided screencast for this project***
 
-# A grocery store name of your choice
-# A grocery store phone number and/or website URL and/or address of choice
+## A grocery store name of your choice
+## A grocery store phone number and/or website URL and/or address of choice
 # The date and time of the beginning of the checkout process, formatted in a human-friendly way (e.g. 2020-02-07 03:54 PM)
 # The name and price of each shopping cart item, price being formatted as US dollars and cents (e.g. $3.50, etc.)
 # The total cost of all shopping cart items (i.e. the "subtotal"), formatted as US dollars and cents (e.g. $19.47), calculated as the sum of their prices
@@ -53,20 +53,41 @@ def to_usd(my_price):
 # A friendly message thanking the customer and/or encouraging the customer to shop again
 
 
-# Checkpoint 1: Capturing User Inputs & # Checkpoint 2: Look-up Products 
+# Checkpoint 1: Capturing User Inputs
 
 total_cost = 0
+chosen_ids = []
 
 while True:
     chosen_id = input("Please input a product identifier: ") 
     if chosen_id == "DONE": 
         break
     else:
+        chosen_ids.append(chosen_id)
+
+print("----------------------------")
+print("ASHA'S GROCERY STORE")
+print("----------------------------")
+print("Web: www.ashasgrocery.com")
+print("Phone: 123.456.7890")
+print("Checkout Time:")
+print("----------------------------")
+
+# print(chosen_ids)
+
+# Checkpoint 2: Look-up Products 
+
+print("Shopping Cart Items:")
+
+for chosen_id in chosen_ids:
         matching_products = [p for p in products if str(p["id"]) == str(chosen_id)]
         matching_product = matching_products[0]
         total_cost = total_cost + matching_product["price"]
-        print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
+        print("- " + matching_product["name"] + " " + str(matching_product["price"]))
+
 
 # Checkpoint 3: Printing the receipt 
 
 print("TOTAL COST: " + str(total_cost))
+
+print("Thanks for shopping with us! Hope to see you soon.")
