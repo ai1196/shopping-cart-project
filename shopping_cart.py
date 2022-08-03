@@ -39,7 +39,7 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-print(products)
+# print(products)
 
 # ***Reviewed guided screencast for this project***
 
@@ -55,9 +55,14 @@ print(products)
 
 # Checkpoint 1: Capturing User Inputs & # Checkpoint 2: Look-up Products 
 
-chosen_id = input("Please input a product identifier: ") 
-matching_products = [p for p in products if str(p["id"]) == str(chosen_id)]
-matching_product = matching_products[0]
-print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
+while True:
+    chosen_id = input("Please input a product identifier: ") 
+    if chosen_id == "DONE": 
+        break
+    else:
+        matching_products = [p for p in products if str(p["id"]) == str(chosen_id)]
+        matching_product = matching_products[0]
+        print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
+
 
 # Checkpoint 3: Printing the receipt 
