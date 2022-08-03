@@ -65,7 +65,7 @@ chosen_ids = []
 
 while True:
     chosen_id = input("Please input a product identifier: ") 
-    if chosen_id == "DONE": 
+    if chosen_id.upper() == "DONE": 
         break
     else:
         chosen_ids.append(chosen_id)
@@ -90,10 +90,12 @@ for chosen_id in chosen_ids:
         subtotal_cost = subtotal_cost + matching_product["price"]
         print("- " + matching_product["name"] + " " + str(matching_product["price"]))
 
+
 tax = subtotal_cost * TAX_RATE
 total_cost = subtotal_cost + tax
 
 # Checkpoint 3: Printing the receipt 
+
 print("----------------------------")
 print("SUBTOTAL: " + to_usd(subtotal_cost))
 print("TAX: " + to_usd(tax))
